@@ -1,0 +1,33 @@
+HISTFILE=~/.zsh_history
+HISTSIZE=10000
+SAVEHIST=10000
+eval `dircolors -b`
+
+autoload -Uz compinit && compinit
+autoload -U colors && colors
+autoload -U promptinit && promptinit
+
+# prompt gentoo
+export PS1="$(print '%{\e[1;32m%}%n%{\e[0m%}'):$(print '%{\e[1;34m%}%~%{\e[0m%}')$ "
+export PS2="$(print '%{\e[0;34m%}>%{\e[0m%}')"
+
+export PAGER=less
+export EDITOR=vim
+export CVSEDITOR=vim
+export BROWSER=links
+export XTERM="aterm +sb -geometry 80x29 -fg black -bg lightgoldenrodyellow -fn -xos4-terminus-medium-*-normal-*-14-*-*-*-*-*-iso8859-15"
+
+unsetopt beep
+unsetopt BG_NICE
+unsetopt correctall
+setopt extendedglob
+setopt hist_ignore_all_dups
+setopt hist_ignore_space
+
+bindkey -v
+
+zstyle :compinstall filename '/home/garrett/.zshrc'
+zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
+
+function mkcd() { mkdir -p $1 && cd $1 }
+
