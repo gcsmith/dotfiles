@@ -1,0 +1,8 @@
+XTerm*background: black
+XTerm*foreground: white
+XTerm*toolbarLocale: C
+XTerm*menuLocale: C
+
+UXTerm*background: black
+UXTerm*foreground: white
+
