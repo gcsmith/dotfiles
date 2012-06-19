@@ -1,0 +1,17 @@
+ --indent=spaces=4           # use 4 spaces for indentation
+ --convert-tabs              # convert all tabs to spaces
+ --align-pointer=name        # place pointer next to var name (type *name)
+ --align-reference=name      # place reference next to var name (type &name)
+ --brackets=stroustrup       # brackets on same line except for functions
+ --break-closing-brackets    # put else/catch/etc on the next line
+ --keep-one-line-statements  # don't touch specially formatted one-liners
+ --indent-preprocessor       # indent preprocessor definitions
+ --indent-col1-comments      # indent comments beginning in column one
+ --max-instatement-indent=60 # don't indent continuation lines beyond 60 cols
+ --min-conditional-indent=0  # no minimal indent -- align with parentheses
+ --pad-oper                  # insert padding around operators
+ --pad-header                # insert padding around paren headers
+ --unpad-paren               # remove any extra padding unwanted padding
+ --suffix=none               # don't bother creating backups
+ --recursive                 # enable recursive processing of directories
+
