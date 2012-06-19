@@ -24,7 +24,10 @@ setopt extendedglob
 setopt hist_ignore_all_dups
 setopt hist_ignore_space
 
+# set input mode to VI, but still give me the bash/emacs style CTRL+A / CTRL+E
 bindkey -v
+bindkey '^A' beginning-of-line
+bindkey '^E' end-of-line
 
 zstyle :compinstall filename '/home/garrett/.zshrc'
 zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}

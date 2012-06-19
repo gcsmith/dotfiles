@@ -41,10 +41,12 @@ set title
 set wildmenu
 set cinoptions=:0,g0
 
-" always expand tabs and indentations to four spaces
-set shiftwidth=4
-set tabstop=4
+" always expand tabs and indentations to four spaces, limit to 80 characters
 set expandtab
+set tabstop=4
+set softtabstop=4
+set shiftwidth=4
+" set textwidth=80
 
 " enable and configure syntax folding
 if has("folding")
