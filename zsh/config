@@ -28,9 +28,13 @@ setopt hist_ignore_space
 bindkey -v
 bindkey '^A' beginning-of-line
 bindkey '^E' end-of-line
+bindkey '^R' history-incremental-search-backward
 
 zstyle :compinstall filename '/home/garrett/.zshrc'
 zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
 
 function mkcd() { mkdir -p $1 && cd $1 }
+
+LANG=POSIX
+KEYTIMEOUT=1
 
