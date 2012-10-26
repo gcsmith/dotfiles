@@ -26,7 +26,7 @@ if has("gui_running")
     colorscheme desert
 else
     set t_Co=256
-    colorscheme desert256
+    colorscheme default
 endif
 
 set nowrap
@@ -85,7 +85,8 @@ let g:NERDTreeWinPos = "right"
 map tt :NERDTreeToggle<CR>
 
 " configure taglist plugin settings
-let Tlist_WinWidth = 58
+let Tlist_Ctags_Cmd='/usr/local/bin/ctags'
+let Tlist_WinWidth = 40
 let Tlist_Use_Right_Window = 1
 map tl :TlistToggle<CR>
 
