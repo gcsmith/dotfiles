@@ -29,6 +29,11 @@ else
     colorscheme default
 endif
 
+" use a more subtle color scheme when diffing files
+if &diff
+    colorscheme mayansmoke
+endif
+
 set nowrap
 set ruler
 set number
