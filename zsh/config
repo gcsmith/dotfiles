@@ -24,6 +24,7 @@ unsetopt correctall
 setopt extendedglob
 setopt hist_ignore_all_dups
 setopt hist_ignore_space
+setopt noflowcontrol
 
 # set input mode to VI, but still give me the bash/emacs style CTRL+A / CTRL+E
 bindkey -v
