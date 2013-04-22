@@ -11,6 +11,9 @@ if has("syntax") && (&t_Co > 2)
     syntax on
 endif
 
+set background=light
+let g:solarized_termcolors=256
+
 " disable just about everything in gVim and override the default font
 if has("gui_running")
     set guifont=Consolas\ 9
@@ -23,10 +26,10 @@ if has("gui_running")
     set guioptions-=T
     set guioptions+=c
     set cul
-    colorscheme desert
+    colorscheme solarized
 else
     set t_Co=256
-    colorscheme default
+    colorscheme solarized
 endif
 
 " use a more subtle color scheme when diffing files
@@ -90,7 +93,7 @@ let g:NERDTreeWinPos = "right"
 map tt :NERDTreeToggle<CR>
 
 " configure taglist plugin settings
-let Tlist_Ctags_Cmd='/usr/local/bin/ctags'
+let Tlist_Ctags_Cmd='ctags'
 let Tlist_WinWidth = 40
 let Tlist_Use_Right_Window = 1
 map tl :TlistToggle<CR>

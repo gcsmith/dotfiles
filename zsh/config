@@ -24,7 +24,10 @@ unsetopt correctall
 setopt extendedglob
 setopt hist_ignore_all_dups
 setopt hist_ignore_space
+
+# disable control flow (ctrl+q/ctrl+s -- interferes with tmux)
 setopt noflowcontrol
+stty -ixon
 
 # set input mode to VI, but still give me the bash/emacs style CTRL+A / CTRL+E
 bindkey -v
