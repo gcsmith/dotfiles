@@ -1,7 +1,9 @@
 HISTFILE=~/.zsh_history
 HISTSIZE=10000
 SAVEHIST=10000
-eval `dircolors -b`
+
+command -v dircolors >/dev/null && eval `dircolors -b`
+command -v gdircolors >/dev/null && eval `gdircolors -b`
 
 autoload -Uz compinit && compinit
 autoload -U colors && colors
@@ -27,7 +29,7 @@ setopt hist_ignore_space
 
 # disable control flow (ctrl+q/ctrl+s -- interferes with tmux)
 setopt noflowcontrol
-stty -ixon
+stty -ixon -ixoff
 
 # set input mode to VI, but still give me the bash/emacs style CTRL+A / CTRL+E
 bindkey -v
