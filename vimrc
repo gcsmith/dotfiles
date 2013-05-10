@@ -37,6 +37,7 @@ if &diff
     colorscheme mayansmoke
 endif
 
+set cursorline
 set nowrap
 set ruler
 set number
