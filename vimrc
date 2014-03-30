@@ -44,7 +44,7 @@ set number
 set hlsearch
 set ignorecase
 set showcmd
-set shortmess=atI
+set shortmess=atIToO
 set scrolloff=4
 set title
 set wildmenu
