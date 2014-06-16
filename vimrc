@@ -1,11 +1,31 @@
 set nocompatible
-filetype plugin on
+filetype off
+
+" ------------------------------------------------------------------------------
+" configure vundle plugin manager
+" ------------------------------------------------------------------------------
+
+set rtp+=/home/garrett/.vim/bundle/Vundle.vim/
+call vundle#begin()
+
+Plugin 'gmarik/Vundle.vim'
+Plugin 'altercation/vim-colors-solarized'
+Plugin 'bling/vim-airline'
+Plugin 'scrooloose/nerdtree'
+Plugin 'tpope/vim-fugitive'
+Plugin 'vim-scripts/mayansmoke'
+Plugin 'vim-scripts/taglist.vim'
+Plugin 'vim-scripts/verilog_systemverilog.vim'
+Plugin 'tikhomirov/vim-glsl'
+Plugin 'vim-scripts/Mark--Karkat'
+Plugin 'Valloric/YouCompleteMe'
+
+call vundle#end()
 filetype plugin indent on
 
-" define EMake: invoke make but do not jump to first error, toggle quickfix
-:comc
-:com -nargs=* EMake make! <args> | cwindow 10
-:autocmd! FileType qf wincmd J
+" ------------------------------------------------------------------------------
+" configure display options
+" ------------------------------------------------------------------------------
 
 if has("syntax") && (&t_Co > 2)
     syntax on
@@ -14,9 +34,12 @@ endif
 set background=light
 let g:solarized_termcolors=256
 
+set colorcolumn=81,161,241
+highlight ColorColumn ctermbg=darkgray guibg=black
+
 " disable just about everything in gVim and override the default font
 if has("gui_running")
-    set guifont=Consolas\ 9
+    set guifont=Powerline\ Consolas\ 9
     set guioptions-=M
     set guioptions-=m
     set guioptions-=L
@@ -48,7 +71,7 @@ set shortmess=atIToO
 set scrolloff=4
 set title
 set wildmenu
-set cinoptions=:0,g0
+"set cinoptions=:0,g0
 
 " always expand tabs and indentations to four spaces, limit to 80 characters
 set expandtab
@@ -69,6 +92,14 @@ set spelllang=en_us
 set tags+=~/.vim/systags
 set backupdir=~/.vim/backup
 
+" ------------------------------------------------------------------------------
+"  configure custom commands
+" ------------------------------------------------------------------------------
+
+" define EMake: invoke make but do not jump to first error, toggle quickfix
+:com -nargs=* EMake make! <args> | cwindow 10
+:autocmd! FileType qf wincmd J
+
 " map custom shortcut commands to the T key
 map tn :tabnew<CR>
 map tw :tabnext<CR>
@@ -88,27 +119,6 @@ map tm :EMake<CR>
 map te :copen<CR>
 map th :set invhlsearch<CR>
 
-" configure NERDtree plugin settings
-let g:NERDTreeWinSize = 58
-let g:NERDTreeWinPos = "right"
-map tt :NERDTreeToggle<CR>
-
-" configure taglist plugin settings
-let Tlist_Ctags_Cmd='ctags'
-let Tlist_WinWidth = 40
-let Tlist_Use_Right_Window = 1
-map tl :TlistToggle<CR>
-
-" configure vimsh plugin settings
-let g:vimsh_pty_prompt_override = 0
-let g:vimsh_sh = '/bin/bash'
-let g:vimsh_split_open = 1
-
-" configure omni-cpp-complete plugin settings
-let OmniCpp_MayCompleteDot = 0
-let OmniCpp_MayCompleteArrow = 0
-let OmniCpp_MayCompleteScope = 0
-
 " process binary files (*.bin) through xxd for hex editing
 augroup Binary
     au!
@@ -121,7 +131,49 @@ augroup Binary
     au BufWritePost *.bin set nomod | endif
 augroup END
 
-" add a print margin on the 80-character column
-set colorcolumn=81,161,241
-highlight ColorColumn ctermbg=darkgray guibg=black
+" ------------------------------------------------------------------------------
+" configure plugin: YouCompleteMe
+" ------------------------------------------------------------------------------
+
+let g:ycm_confirm_extra_conf = 0
+
+" ------------------------------------------------------------------------------
+" configure plugin: airline
+" ------------------------------------------------------------------------------
+
+let g:airline#extensions#tabline#enabled = 0
+let g:airline_powerline_fonts = 1
+
+" ------------------------------------------------------------------------------
+" configure plugin: NERDtree
+" ------------------------------------------------------------------------------
+
+let g:NERDTreeWinSize = 58
+let g:NERDTreeWinPos = "right"
+map tt :NERDTreeToggle<CR>
+
+" ------------------------------------------------------------------------------
+" configure plugin: taglist
+" ------------------------------------------------------------------------------
+
+let Tlist_Ctags_Cmd='ctags'
+let Tlist_WinWidth = 40
+let Tlist_Use_Right_Window = 1
+map tl :TlistToggle<CR>
+
+" ------------------------------------------------------------------------------
+" configure plugin: vimsh
+" ------------------------------------------------------------------------------
+
+let g:vimsh_pty_prompt_override = 0
+let g:vimsh_sh = '/bin/bash'
+let g:vimsh_split_open = 1
+
+" ------------------------------------------------------------------------------
+" configure plugin: omni-cpp-complete
+" ------------------------------------------------------------------------------
+
+let OmniCpp_MayCompleteDot = 0
+let OmniCpp_MayCompleteArrow = 0
+let OmniCpp_MayCompleteScope = 0
 
