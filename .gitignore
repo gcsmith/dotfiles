@@ -5,4 +5,5 @@
 vim/.VimballRecord
 vim/.netrwhist
 vim/backup/*
+vim/bundle/*
 vim/doc/tags

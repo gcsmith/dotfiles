@@ -5,7 +5,7 @@ filetype off
 " configure vundle plugin manager
 " ------------------------------------------------------------------------------
 
-set rtp+=/home/garrett/.vim/bundle/Vundle.vim/
+set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
 Plugin 'gmarik/Vundle.vim'
