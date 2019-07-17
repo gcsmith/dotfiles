@@ -1,8 +1,8 @@
-XTerm*background: black
-XTerm*foreground: white
+XTerm*background: cornsilk
+XTerm*foreground: black
 XTerm*toolbarLocale: C
 XTerm*menuLocale: C
 
-UXTerm*background: black
-UXTerm*foreground: white
+UXTerm*background: cornsilk
+UXTerm*foreground: black
 

@@ -42,7 +42,7 @@ zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
 
 function mkcd() { mkdir -p $1 && cd $1 }
 
-LANG=POSIX
+# LANG=POSIX
 KEYTIMEOUT=1
 
 export DC_ARM_BASE=/Users/garrett/Projects/cadcdev/toolchain/sh-elf
