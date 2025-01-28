@@ -2,8 +2,9 @@
 *.lock
 *.DS_Store
 *.swp
-vim/.VimballRecord
-vim/.netrwhist
-vim/backup/*
-vim/bundle/*
-vim/doc/tags
+.vim/.VimballRecord
+.vim/.netrwhist
+.vim/backup/*
+.vim/bundle/*
+.vim/doc/tags
+.vim/plugged/*

@@ -2,25 +2,27 @@ set nocompatible
 filetype off
 
 " ------------------------------------------------------------------------------
-" configure vundle plugin manager
+" configure plugins
 " ------------------------------------------------------------------------------
 
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
+call plug#begin()
+Plug 'altercation/vim-colors-solarized'
+Plug 'inkarkat/vim-ingo-library'
+Plug 'inkarkat/vim-mark'
+Plug 'Konfekt/FastFold'
+Plug 'scrooloose/nerdtree'
+Plug 'tikhomirov/vim-glsl'
+Plug 'tpope/vim-fugitive'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'vim-scripts/mayansmoke'
+Plug 'vim-scripts/taglist.vim'
+Plug 'vim-scripts/verilog_systemverilog.vim'
+" <REMOVED> Plug 'gmarik/Vundle.vim'
+" <REMOVED> Plug 'vim-scripts/Mark--Karkat'
+" <REMOVED> Plug 'Valloric/YouCompleteMe'
+call plug#end()
 
-Plugin 'gmarik/Vundle.vim'
-Plugin 'altercation/vim-colors-solarized'
-Plugin 'bling/vim-airline'
-Plugin 'scrooloose/nerdtree'
-Plugin 'tpope/vim-fugitive'
-Plugin 'vim-scripts/mayansmoke'
-Plugin 'vim-scripts/taglist.vim'
-Plugin 'vim-scripts/verilog_systemverilog.vim'
-Plugin 'tikhomirov/vim-glsl'
-Plugin 'vim-scripts/Mark--Karkat'
-Plugin 'Valloric/YouCompleteMe'
-
-call vundle#end()
 filetype plugin indent on
 
 " ------------------------------------------------------------------------------
@@ -32,7 +34,7 @@ if has("syntax") && (&t_Co > 2)
 endif
 
 set background=light
-let g:solarized_termcolors=256
+" let g:solarized_termcolors=256
 
 set colorcolumn=81,161,241
 highlight ColorColumn ctermbg=darkgray guibg=black
